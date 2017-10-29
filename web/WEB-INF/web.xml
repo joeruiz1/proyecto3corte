@@ -8,6 +8,14 @@
         <servlet-name>ListarLibros</servlet-name>
         <servlet-class>Controladores.ListarLibros</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CrearFactura</servlet-name>
+        <servlet-class>Controladores.CrearFactura</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>VerVentas</servlet-name>
+        <servlet-class>Controladores.VerVentas</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ControlinserLibro</servlet-name>
         <url-pattern>/ControlinserLibro</url-pattern>
@@ -15,6 +23,14 @@
     <servlet-mapping>
         <servlet-name>ListarLibros</servlet-name>
         <url-pattern>/ListarLibros</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CrearFactura</servlet-name>
+        <url-pattern>/CrearFactura</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VerVentas</servlet-name>
+        <url-pattern>/VerVentas</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
