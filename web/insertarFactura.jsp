@@ -82,7 +82,7 @@
                                             }
                                         } else {
                                         %>
-                                        <h1>inserte un esquema</h1>
+                                        <h1>inserte un Libro</h1>
                                         <%
                                                 }
                                             }
@@ -93,12 +93,13 @@
                                 </p>
                                 <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="contact_submitted" value="submit" /></p>
                             </div>
-                            <h2><a href="index.jsp"> volver al menu</a></h2>
-                            <h2><a href="InserTabla"> Listar los Libros</a></h2>
+                          
 
 
 
                         </form>
+                                          <h2><a href="index.jsp"> volver al menu</a></h2>
+                            <h2><a href="VerVentas"> ventas totales</a></h2>
 
                     </div>
                 </div>

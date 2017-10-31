@@ -37,32 +37,28 @@ public class VerVentas extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            
-             RequestDispatcher rq = request.getRequestDispatcher("ventas.jsp");
 
-            
-            CrudFactura fa=new CrudFactura();
+            RequestDispatcher rq = request.getRequestDispatcher("ventas.jsp");
+
+            CrudFactura fa = new CrudFactura();
 
             ArrayList<Factura> lis = null;
             lis = (ArrayList<Factura>) fa.mostarFacturas();
-           
-            Factura mayor=new Factura();
-            
-            
-            
-            
-            
-            
-            
-            
+
+            int mayor = 0;
+
             if (lis.size() > 0) {
+                for (int i = 0; i < lis.size(); i++) {
+                    mayor=mayor + lis.get(i).getPrecio();
+                }
+                request.setAttribute("mayor", mayor);
 
                 request.setAttribute("lis", lis);
             } else {
                 request.setAttribute("lis", null);
             }
             rq.forward(request, response);
-            
+
         }
     }
 
