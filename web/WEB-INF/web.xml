@@ -28,6 +28,18 @@
         <servlet-name>ListarEmpleados</servlet-name>
         <servlet-class>Controladores.ListarEmpleados</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LibrosUsados</servlet-name>
+        <servlet-class>Controladores.LibrosUsados</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LibrosNuevos</servlet-name>
+        <servlet-class>Controladores.LibrosNuevos</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>OrdenarAutor</servlet-name>
+        <servlet-class>Controladores.OrdenarAutor</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ControlinserLibro</servlet-name>
         <url-pattern>/ControlinserLibro</url-pattern>
@@ -55,6 +67,18 @@
     <servlet-mapping>
         <servlet-name>ListarEmpleados</servlet-name>
         <url-pattern>/ListarEmpleados</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LibrosUsados</servlet-name>
+        <url-pattern>/LibrosUsados</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LibrosNuevos</servlet-name>
+        <url-pattern>/LibrosNuevos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OrdenarAutor</servlet-name>
+        <url-pattern>/OrdenarAutor</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
