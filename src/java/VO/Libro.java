@@ -82,6 +82,9 @@ public class Libro  {
         this.precio = precio;
     }
     
+    public void getEmail(){
+        System.out.println("hola");
+    }
     
     
    
