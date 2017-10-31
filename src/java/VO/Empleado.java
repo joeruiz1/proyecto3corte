@@ -13,14 +13,17 @@ public class Empleado {
     
     private String nombre;
     private int cedula;
-    private int contraseña;
+    private String contraseña;
     private String usuario;
 
-    public Empleado(String nombre, int cedula, int contraseña, String usuario) {
+    public Empleado(String nombre, int cedula, String contraseña, String usuario) {
         this.nombre = nombre;
         this.cedula = cedula;
         this.contraseña = contraseña;
         this.usuario = usuario;
+    }
+
+    public Empleado() {
     }
 
     public String getNombre() {
@@ -39,11 +42,11 @@ public class Empleado {
         this.cedula = cedula;
     }
 
-    public int getContraseña() {
+    public String getContraseña() {
         return contraseña;
     }
 
-    public void setContraseña(int contraseña) {
+    public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
     }
 

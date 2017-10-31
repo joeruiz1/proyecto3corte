@@ -16,6 +16,18 @@
         <servlet-name>VerVentas</servlet-name>
         <servlet-class>Controladores.VerVentas</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>Controladores.Login</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControlEmpleado</servlet-name>
+        <servlet-class>Controladores.ControlEmpleado</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListarEmpleados</servlet-name>
+        <servlet-class>Controladores.ListarEmpleados</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ControlinserLibro</servlet-name>
         <url-pattern>/ControlinserLibro</url-pattern>
@@ -32,9 +44,24 @@
         <servlet-name>VerVentas</servlet-name>
         <url-pattern>/VerVentas</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControlEmpleado</servlet-name>
+        <url-pattern>/ControlEmpleado</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListarEmpleados</servlet-name>
+        <url-pattern>/ListarEmpleados</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
+    <welcome-file-list>
+        <welcome-file>Sindex.jsp</welcome-file>
+    </welcome-file-list>
 </web-app>
