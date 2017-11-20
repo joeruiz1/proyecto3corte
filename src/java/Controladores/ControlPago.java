@@ -66,25 +66,25 @@ public class ControlPago extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         boolean resultado = false;
-        processRequest(request, response);
+
         String id = request.getParameter("id");
         String nombre = request.getParameter("medioPago");
 
         int idp = Integer.parseInt(id);
-        if (id.trim().length() > 0 ) {
+        if (nombre.trim().length()>0) {
             resultado = true;
             FormaPago f = new FormaPago(idp, nombre);
             Pago p = new Pago();
             p.agregarPago(f);
-            RequestDispatcher rq = request.getRequestDispatcher("InsertarFactura.jsp");
-
+            RequestDispatcher rq = request.getRequestDispatcher("insertarFactura.jsp");
+            rq.forward(request, response);
             if (resultado == true) {
                 request.setAttribute("resultado", true);
             } else {
                 request.setAttribute("resultado", false);
             }
 
-            rq.forward(request, response);
+      
         } else {
             request.setAttribute("resultado", false);
         }

@@ -27,7 +27,7 @@
                 <div class="container">
                     <div class="dynamicContent">
                         <!--content-->
-                        <h1>Nuevo Empleado</h1>
+                        <h1>Forma de pago</h1>
              <%
                         if (request.getAttribute("resultado") != null) {
                             Boolean resultado = (Boolean) request.getAttribute("resultado");
