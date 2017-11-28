@@ -7,7 +7,9 @@ package Controladores;
 
 import DAO.CrudFactura;
 import DAO.CrudLibro;
+import DAO.Pago;
 import VO.Factura;
+import VO.FormaPago;
 import VO.Libro;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -24,7 +26,6 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class CrearFactura extends HttpServlet {
 
-  
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -41,6 +42,15 @@ public class CrearFactura extends HttpServlet {
             } else {
                 request.setAttribute("lis", null);
             }
+            Pago p = new Pago();
+            ArrayList<FormaPago> fp = null;
+            fp = (ArrayList<FormaPago>) p.listarFP();
+            if (fp.size() > 0) {
+                request.setAttribute("fp", fp);
+            } else {
+                request.setAttribute("fp", null);
+
+            }
             rq.forward(request, response);
         }
 
@@ -49,29 +59,31 @@ public class CrearFactura extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        boolean resultado=false;
+
+        boolean resultado = false;
 
         String id = request.getParameter("id");
         String nombreLi = request.getParameter("nombreLi");
         String numEm = request.getParameter("numEm");
         String cliente = request.getParameter("nombre");
-
+        String formaPago = request.getParameter("tipoPago");
         int fac = Integer.parseInt(id);
         int em = Integer.parseInt(numEm);
 
-        if (id.trim().length() != 0 && nombreLi.trim().length() != 0) {
+        if (id.trim().length() != 0 && nombreLi.trim().length() != 0 && formaPago.trim().length() != 0) {
 
             CrudFactura cr = new CrudFactura();
             CrudLibro cl = new CrudLibro();
+            FormaPago fa = new FormaPago();
+            Pago p = new Pago();
             Libro li = new Libro();
-            
-            
-            li=cl.extraerLibro(nombreLi);
-            Factura f=new Factura(cliente, nombreLi, li.getId(), fac, li.getPrecio(), em);
-            
+
+            li = cl.extraerLibro(nombreLi);
+            fa = p.extraerPago(formaPago);
+            Factura f = new Factura(cliente, nombreLi, li.getId(), fac, li.getPrecio(), em, fa.getId(), fa.getFormarPago());
+
             cr.facturar(f);
-            
+
             RequestDispatcher rq = request.getRequestDispatcher("insertarFactura.jsp");
 
             if (resultado == true) {
@@ -81,7 +93,7 @@ public class CrearFactura extends HttpServlet {
             }
 
             rq.forward(request, response);
-       
+
         }
 
     }

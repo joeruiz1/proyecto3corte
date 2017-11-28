@@ -76,7 +76,7 @@ public class ControlPago extends HttpServlet {
             FormaPago f = new FormaPago(idp, nombre);
             Pago p = new Pago();
             p.agregarPago(f);
-            RequestDispatcher rq = request.getRequestDispatcher("insertarFactura.jsp");
+            RequestDispatcher rq = request.getRequestDispatcher("FormaPago.jsp");
             rq.forward(request, response);
             if (resultado == true) {
                 request.setAttribute("resultado", true);

@@ -59,6 +59,8 @@
                 
                                      
             </form>
+            <h2><a href="index.jsp"> volver al menu</a></h2>
+            <h2><a href="CrearFactura"> crear factura</a></h2>
             
             <p><br>
             </p>

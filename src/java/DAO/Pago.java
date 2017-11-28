@@ -35,4 +35,44 @@ private Connection connection;
         }
     }
 
+    
+    public FormaPago extraerPago(String nombre) {
+        FormaPago FP = new FormaPago();
+        try {
+            PreparedStatement preparedStatement = connection.
+                    prepareStatement("select * from FormasPago where nombre=?");
+            preparedStatement.setString(1, nombre);
+            ResultSet rs = preparedStatement.executeQuery();
+
+            if (rs.next()) {
+               FP.setId(rs.getInt("idP"));
+               FP.setFormarPago(rs.getString("nombre"));
+                           }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return FP;
+    }
+    public List<FormaPago> listarFP() {
+        List<FormaPago> users = new ArrayList<FormaPago>();
+        try {
+            System.out.println("LLegue hasta aca");
+            Statement statement = connection.createStatement();
+
+            ResultSet rs = statement.executeQuery("select * from FormasPago");
+            while (rs.next()) {
+                FormaPago fp = new FormaPago();
+               fp.setId(rs.getInt("idP"));
+               fp.setFormarPago(rs.getString("nombre"));
+              
+                users.add(fp);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return users;
+    }
+
 }
