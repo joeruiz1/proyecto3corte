@@ -44,6 +44,10 @@
         <servlet-name>ControlPago</servlet-name>
         <servlet-class>Controladores.ControlPago</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EmpleadosUsados</servlet-name>
+        <servlet-class>Controladores.EmpleadosUsados</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ControlinserLibro</servlet-name>
         <url-pattern>/ControlinserLibro</url-pattern>
@@ -87,6 +91,10 @@
     <servlet-mapping>
         <servlet-name>ControlPago</servlet-name>
         <url-pattern>/ControlPago</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EmpleadosUsados</servlet-name>
+        <url-pattern>/EmpleadosUsados</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

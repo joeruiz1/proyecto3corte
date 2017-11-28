@@ -31,7 +31,7 @@ public class CrudFactura {
     public void facturar(Factura li) {
         try {
             PreparedStatement preparedStatement = connection
-                    .prepareStatement("insert into Factura (NombreCliente,nombreLi,idLi,numFac,precio,cedulaEmple,idP,nombreP) values (?, ?, ?, ? , ?, ?,?,?)");
+                    .prepareStatement("insert into Factura (NombreCliente,nombreLi,idLi,numFac,precio,cedula,idP,nombreP) values (?, ?, ?, ? , ?, ?,?,?)");
 
            // Parameters start with 1
             preparedStatement.setString(1, li.getNombreCliente());
@@ -67,7 +67,7 @@ public class CrudFactura {
               f.setIdLi(rs.getInt("idLi"));
               f.setNumFac(rs.getInt("numFac"));
               f.setPrecio(rs.getInt("precio"));
-              f.setIdEmple(rs.getInt("cedulaEmple"));
+              f.setIdEmple(rs.getInt("cedula"));
               f.setIdPago(rs.getInt("idP"));
               f.setFormaPago(rs.getString("nombreP"));
                

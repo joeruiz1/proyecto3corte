@@ -46,6 +46,7 @@
                                     <li><a href="ListarLibros">Inventarios</a></li>
                                     <li><a href="VerVentas">ventas</a></li>
                                     <li><a href="ListarEmpleados">empleados</a></li>
+                                    <li><a href="EmpleadosUsados">empleados que vendieron libros usados</a></li>
                                     
                                 </ul>
                             </div>
